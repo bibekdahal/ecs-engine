@@ -6,10 +6,10 @@ class System
 {
 public:
     // Add type(s) of components that this system process
-    void AddComponentType(int type) { m_componentTypes.push_back(type); }
-    void AddComponentTypes(std::vector<int> types) { m_componentTypes.insert(m_componentTypes.end(), types.begin(), types.end()); }
+    void AddComponentType(int id) { m_componentTypes.push_back(id); }
+    void AddComponentTypes(std::vector<int> ids) { m_componentTypes.insert(m_componentTypes.end(), ids.begin(), ids.end()); }
 
-    // Only add entity to system if all ComponentTypes belong to the Entity
+    // Add entity to system if all ComponentTypes belong to the Entity
     bool AddEntity(Entity* entity)
     {
         for (auto c : m_componentTypes)

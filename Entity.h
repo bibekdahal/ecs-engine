@@ -18,15 +18,18 @@ public:
     So, alternate methods are provided
     */
 
+    // Add component to the entity
     template <class T>
     void AddComponent(T* component) { AddComponent(ClassManager::GetClassId<T>(), component); }
     void AddComponent(int classId, Component* component) { m_components[classId] = component; }
     void AddComponent(Component* component) { AddComponent(component->GetId(), component); }
-
+    
+    // Get a component of the entity
     template <class T>
     T* GetComponent() { return GetComponent(ClassManager::GetClassId<T>()); }
     Component* GetComponent(int classId) { return m_components[classId]; }
 
+    // Check if the entity has a component
     template <class T>
     bool HasComponent() { return HasComponent(ClassManager::GetClassId<T>()); }
     bool HasComponent(int classId) { return m_components.find(classId) != m_components.end(); }

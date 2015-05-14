@@ -18,6 +18,7 @@ namespace ClassManager
 class Component
 {
 public:
+    // Get type of component using an id
     virtual int GetId() = 0;
 };
 
@@ -32,7 +33,7 @@ public:
 };
 
 
-// A simpler base class for component with GetID() already implmented
+// A simpler base class for components with GetId() already implmented
 template <class T>
 class ComponentBase : public Component
 {
